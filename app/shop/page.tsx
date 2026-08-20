@@ -16,7 +16,7 @@ const products:Product[]=[
 [10,"Diamond Floral Pear Marquise Link Bracelet","Bracelets",32600,"342b8a3ae5204cf3b058a86d480fd94e"],
 [11,"The Eclipse Two-Tone Pear Tennis Bracelet","Bracelets",28750,"3045094fec0b42e0bf30d818193f2582"],
 [12,"The Romantic Heart Halo Diamond Pendant","Necklaces",7450,"5f453cb3d43b4c718d2f5b892f198fbe"]
-].map(([id,name,category,price,img])=>({id,name,category,price,image:media(img)})) as Product[];
+].map(([id,name,category,price,img])=>({id,name,category,price,image:media(String(img))})) as Product[];
 const money=(n:number)=>new Intl.NumberFormat("en-AE",{style:"currency",currency:"AED",maximumFractionDigits:0}).format(n);
 export default function Shop(){
  const [category,setCategory]=useState("All Products"),[cart,setCart]=useState<Product[]>([]);
